@@ -43,12 +43,13 @@ def signup():
     user = User.query.filter_by(email=body["email"]).first()
 
     if user:
-        return jsonify({"msg": "User already exist"}), 404
+        return jsonify({"msg": "User already exists"}), 404
 
     new_user = User(
         email = body["email"], 
         password = body["password"],
-        full_name = body["full_name"])
+        name = body["name"],
+        last_name = body["last_name"])
 
     db.session.add(new_user)
     db.session.commit()
@@ -57,32 +58,33 @@ def signup():
     return jsonify(response_body), 200
 
 
-@api.route('/profile', methods=['DELETE'])
+@api.route('/profile/<int:user_id>', methods=['DELETE'])
 @jwt_required()
-def delete_account():
+def delete_account(user_id):
     current_user = get_jwt_identity()
     user_query = User.query.filter(user_id==current_user).first()
 
     if user_query:
-        db.session.delete(favorites_query)
+        db.session.delete(user_query)
         db.session.commit()
         return jsonify({"msg": "Your account has been deleted"}), 200
     
-    if not favorites_query:
+    if not user_query:
         return jsonify({"msg": "Not able to delete this account"}), 200
 
 
-@api.route('/profile', methods=['PUT'])
+@api.route('/profile/<int:user_id>', methods=['PUT'])
 @jwt_required()
-def update_account():
+def update_account(user_id):
     current_user = get_jwt_identity()
     user_query = User.query.filter(user_id==current_user).first()
 
     body = json.loads(request.data)
-    new_user = User(
+    updated_user = User(
         email = body["email"], 
         password = body["password"],
-        full_name = body["full_name"])
+        name = body["name"],
+        last_name = body["last_name"])
 
-    db.session.add(new_user)
     db.session.commit()
+    return jsonify({"msg": "You information has been updated"}), 200
