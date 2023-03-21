@@ -23,8 +23,8 @@ export const Single = props => {
     return (
 
         <
-        h1 className = "display-4" > MODIFICACION SOL < /h1> <
-        h1 className = "display-4" > MODIFICACION SOL < /h1> <
+        h2 className = "display-4" > MODIFICACION SOL < /h2> <
+        h2 className = "display-4" > MODIFICACION SOL < /h2> <
         div className = "jumbotron" >
         <
         h1 className = "display-4" > This will show the demo element: {
@@ -43,8 +43,8 @@ export const Single = props => {
         href = "#"
         role = "button" >
         Back home <
-        /span> <
-        /Link> <
+        /span> < /
+        Link > <
         /div>
     );
 };
