@@ -7,7 +7,7 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Login } from "./pages/login";
 import { Signup } from "./pages/signup";
-import { Info_post } from "./pages/info_post";
+import { Info_post } from "./pages/info_post.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
