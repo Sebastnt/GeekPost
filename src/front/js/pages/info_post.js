@@ -5,22 +5,22 @@ import { Link, useNavigate } from "react-router-dom";
 
 export const Info_post = () => {
   const { store, actions } = useContext(Context);
-  const [foto, setFoto] = useState(" ");
-  const [identidad, setIdentidad] = useState(" ");
-  const [text_Princ, setText_Princ] = useState("");
-  const [text_Sec, setText_Sec] = useState(" ");
-  const [oferta, setOferta] = useState(" ");
-  const [contacto, setContacto] = useState("");
+  const [image, setImage] = useState(" ");
+  const [identity, setIdentity] = useState(" ");
+  const [main_text, setMain_text] = useState("");
+  const [secondary_text, setSecondary_text] = useState(" ");
+  const [price, setPrice] = useState(" ");
+  const [contact, setContact] = useState("");
   const [logo, setLogo] = useState("");
-  const [formalidad, setFormalidad] = useState(" ");
-  const [color1, setColor1] = useState(" ");
-  const [color2, setColor2] = useState("");
-  const [color3, setColor3] = useState("");
-  const navigate = useNavigate();
+  const [formality, setFormality] = useState(" ");
+  const [main_color, setMain_color] = useState(" ");
+  const [secondary_color, setSecondary_color] = useState("");
+  const [colors, setColors] = useState("");
+ const navigate = useNavigate();
 
    return (
-   <>
-    <div className="main">
+   
+   <div className="main">
 
         <div className="container">
             <form method="POST" className="appointment-form" id="appointment-form">
@@ -30,50 +30,50 @@ export const Info_post = () => {
                     <div className="form-group">  
                         <label htmlFor="formFileSm" className="form-label">Subir foto</label>
                         <input className="form-control form-control-sm" 
-                        id="foto" 
-                        onChange={(e) => setFoto(e.target.value)}
-                        value={foto}
+                        id="image" 
+                        onChange={(e) => setImage(e.target.value)}
+                        value={image}
                         type="file" required 
                         />
                     </div>
                    
                     <input type="text" 
-                    name="identidad" 
-                    id="identidad" 
-                    onChange={(e) => setIdentidad(e.target.value)}
-                    value={identidad}
+                    name="identity" 
+                    id="identity" 
+                    onChange={(e) => setIdentity(e.target.value)}
+                    value={identity}
                     placeholder="Identidad"
                     />
 
                     <input type="text" 
-                    name="text_Princ" 
-                    id="text_Princ" 
-                    onChange={(e) => setText_Princ(e.target.value)}
-                    value={text_Princ}
+                    name="main_text" 
+                    id="main_text" 
+                    onChange={(e) => setMain_text(e.target.value)}
+                    value={main_text}
                     placeholder="Texto principal (opcional)" 
                     />
 
                     <input type="text" 
-                    name="text_Sec" 
-                    id="text_Sec" 
-                    onChange={(e) => setText_Sec(e.target.value)}
-                    value={text_Sec}
+                    name="secondary_text" 
+                    id="secondary_text" 
+                    onChange={(e) => setSecondary_text(e.target.value)}
+                    value={secondary_text}
                     placeholder="Texto secundario (opcional)"  
                     />
 
                     <input type="text" 
-                    name="oferta" 
-                    id="oferta" 
-                    onChange={(e) => setOferta(e.target.value)}
-                    value={oferta}
+                    name="price" 
+                    id="price" 
+                    onChange={(e) => setPrice(e.target.value)}
+                    value={price}
                     placeholder="Oferta (opcional)"  
                     />
 
                     <input type="text" 
-                    name="contacto" 
-                    id="contacto" 
-                    onChange={(e) => setContacto(e.target.value)}
-                    value={contacto}
+                    name="contact" 
+                    id="contact" 
+                    onChange={(e) => setContact(e.target.value)}
+                    value={contact}
                     placeholder="Dato de contacto (opcional)" 
                      />
 
@@ -90,8 +90,8 @@ export const Info_post = () => {
                     <div className="select-list">
                         <label htmlFor="confirm_type" className="form-label" required>Que tan formal queres que sea tu publicacion</label>
                         <select name="confirm_type" 
-                        onChange={(e) => setFormalidad(e.target.value)}
-                        value={formalidad}
+                        onChange={(e) => setFormality(e.target.value)}
+                        value={formality}
                         id="confirm_type">
                             <option defaultValue="">Elegir</option>
                             <option value="by_email">Muy formal</option>
@@ -102,7 +102,7 @@ export const Info_post = () => {
                 </div>
                 <div className="form-group-2">
                     <h3>Elige 3 colores que se identifican con tu marca </h3>
-                    {/* <table className="table">
+                     <table className="table">
                     <tbody>
                         <tr>
                           <td style="cursor:pointer;background-color:rgb(205, 92, 92)" onClick="clickColor(&quot;rgb(205, 92, 92):)"></td>
@@ -189,19 +189,19 @@ export const Info_post = () => {
                           <td style="cursor:pointer;background-color:rgb(0, 0, 0)"   onClick="clickColor(&quot;rgb(0, 0, 0);)"></td>
                         </tr>
                       </tbody>
-                    </table>   */}
+                    </table>   
 
                     
                    
                 </div>
                
-                {/* <div className="form-submit">
+                 <div className="form-submit">
                     <input type="submit" name="submit" id="submit" className="submit" value={Crear} />
-                </div> */}
+                </div> 
             </form>
         </div>
 
     </div>
-    </>
+     
   );
 };
