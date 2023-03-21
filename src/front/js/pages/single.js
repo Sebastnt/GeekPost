@@ -9,6 +9,8 @@ export const Single = props => {
 	const params = useParams();
 
 	return (
+		
+		<h1 className="display-4">MODIFICACION SOL</h1>
 		<div className="jumbotron">
 			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
 			<img src={rigoImageUrl} />
