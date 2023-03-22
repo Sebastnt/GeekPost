@@ -38,61 +38,62 @@ export const Info_post = () => {
                     </div>
                    
                     <input type="text" 
-                    name="identity" 
-                    id="identity" 
-                    onChange={(e) => setIdentity(e.target.value)}
-                    value={identity}
-                    placeholder="Identidad"
+                      name="identity" 
+                      id="identity" 
+                      onChange={(e) => setIdentity(e.target.value)}
+                      value={identity}
+                      placeholder="Identidad"
                     />
 
                     <input type="text" 
-                    name="main_text" 
-                    id="main_text" 
-                    onChange={(e) => setMain_text(e.target.value)}
-                    value={main_text}
-                    placeholder="Texto principal (opcional)" 
+                      name="main_text" 
+                      id="main_text" 
+                      onChange={(e) => setMain_text(e.target.value)}
+                      value={main_text}
+                      placeholder="Texto principal (opcional)" 
                     />
 
                     <input type="text" 
-                    name="secondary_text" 
-                    id="secondary_text" 
-                    onChange={(e) => setSecondary_text(e.target.value)}
-                    value={secondary_text}
-                    placeholder="Texto secundario (opcional)"  
+                      name="secondary_text" 
+                      id="secondary_text" 
+                      onChange={(e) => setSecondary_text(e.target.value)}
+                      value={secondary_text}
+                      placeholder="Texto secundario (opcional)"
                     />
 
                     <input type="text" 
-                    name="price" 
-                    id="price" 
-                    onChange={(e) => setPrice(e.target.value)}
-                    value={price}
-                    placeholder="Oferta (opcional)"  
+                      name="price" 
+                      id="price" 
+                      onChange={(e) => setPrice(e.target.value)}
+                      value={price}
+                      placeholder="Oferta (opcional)" 
                     />
 
                     <input type="text" 
-                    name="contact" 
-                    id="contact" 
-                    onChange={(e) => setContact(e.target.value)}
-                    value={contact}
-                    placeholder="Dato de contacto (opcional)" 
-                     />
+                      name="contact" 
+                      id="contact" 
+                      onChange={(e) => setContact(e.target.value)}
+                      value={contact}
+                      placeholder="Dato de contacto (opcional)" 
+                    />
 
 
 
                     <div className="form-group">  
                         <label htmlFor="formFileSm" className="form-label">Subir logo</label>
                         <input className="form-control form-control-sm" 
-                        id="Logo" 
-                        onChange={(e) => setLogo(e.target.value)}
-                        value={logo}
-                        type="file" />
+                          id="Logo" 
+                          onChange={(e) => setLogo(e.target.value)}
+                          value={logo}
+                          type="file" 
+                        />
                     </div>
                     <div className="select-list">
                         <label htmlFor="confirm_type" className="form-label" required>Que tan formal queres que sea tu publicacion</label>
                         <select name="confirm_type" 
-                        onChange={(e) => setFormality(e.target.value)}
-                        value={formality}
-                        id="confirm_type">
+                          onChange={(e) => setFormality(e.target.value)}
+                          value={formality}
+                          id="confirm_type">
                             <option defaultValue="">Elegir</option>
                             <option value="by_email">Muy formal</option>
                             <option value="by_email">Mas o menos formal</option>
@@ -102,8 +103,8 @@ export const Info_post = () => {
                 </div>
                 <div className="form-group-2">
                     <h3>Elige 3 colores que se identifican con tu marca </h3>
-                     <table className="table">
-                    <tbody>
+                 <table className="table">
+                      <tbody>
                         <tr>
                           <td style="cursor:pointer;background-color:rgb(205, 92, 92)" onClick="clickColor(&quot;rgb(205, 92, 92):)"></td>
                           <td style="cursor:pointer;background-color:rgb(255, 20, 147)"   onClick="clickColor(&quot;rgb(255, 20, 147);)"></td>
@@ -192,16 +193,16 @@ export const Info_post = () => {
                     </table>   
 
                     
-                   
+              
                 </div>
-               
-                 {/* <div className="form-submit">
+          
+              {/* <div className="form-submit">
                     <input type="submit" name="submit" id="submit" className="submit" value={Crear} />
                 </div>  */}
             </form>
         </div>
 
     </div>
-     
+
   );
 };
