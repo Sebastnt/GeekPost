@@ -82,7 +82,7 @@ export const Signup = () => {
       
     </div>
     <div >
-      <img className="col-8  mt-5 me-5 w-100 rounded" src="src/front/img/foto1.jpg" alt=""/>
+      <img className="col-8  mt-5 me-5 w-100 rounded" src="../im/workspace/GeekPost/src/front/img/foto1.jpg" alt=""/>
      
     </div>
 

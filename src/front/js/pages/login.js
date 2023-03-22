@@ -35,7 +35,7 @@ export const Login = () => {
         </div>
         <div className="registration">
         Necesitas una cuenta? 
-        <Link to="/Registro"><a href="#">Registrate</a></Link>
+        <Link to="/signup"><a href="#">Registrate</a></Link>
         </div>
         <form action="" method="POST">
         <label for="login" className="login">
