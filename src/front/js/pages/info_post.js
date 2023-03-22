@@ -195,9 +195,9 @@ export const Info_post = () => {
                    
                 </div>
                
-                 <div className="form-submit">
+                 {/* <div className="form-submit">
                     <input type="submit" name="submit" id="submit" className="submit" value={Crear} />
-                </div> 
+                </div>  */}
             </form>
         </div>
 
