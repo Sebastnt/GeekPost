@@ -74,7 +74,7 @@ figure {
     color: #222;
     font-family: 'Roboto Slab';
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
@@ -83,7 +83,7 @@ figure {
     color: #222;
     font-size: 15px;
     margin: 0px;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
 }
 
 
@@ -103,19 +103,19 @@ figure {
     background-position: center center;
     font-weight: 400;
     font-family: 'Roboto Slab';
-    margin: 20px;
+    margin: 0px;
 
 }
 
 .todo {
-    padding: 60px 0;
+    padding: 20px 0;
     position: relative;
 }
 
 .cont {
     width: 586px;
     background: #fff;
-    margin-left: 165px;
+    margin-left: 180px;
     border-radius: 10px;
     height: auto;
     -webkit-border-radius: 10px;
@@ -136,7 +136,7 @@ select .elegir {
     border-bottom: 2px solid #ebebeb;
     padding: 2px 0;
     color: #222;
-    margin-bottom: 31px;
+    margin-bottom: 15px;
     font-family: 'Roboto Slab';
 }
 
@@ -157,7 +157,7 @@ input[type=checkbox]:not(old) {
 input[type=checkbox]:not(old)+label {
     display: inline-block;
     margin-top: 7px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 input[type=checkbox]:not(old)+label>span {
@@ -231,23 +231,23 @@ input[type=checkbox]:not(old):checked+label>span:before {
 
 
 #confirm_type {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .form-group-2 {
     margin-top: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .form-check {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .select-list {
     position: relative;
     display: inline-block;
     width: 100%;
-    margin-bottom: 55px;
+    margin-bottom: 20px;
 }
 
 
@@ -262,7 +262,7 @@ input[type=checkbox]:not(old):checked+label>span:before {
     border: none;
     padding: 0;
     color: #585757;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     font-family: 'Roboto Slab';
 }
 
@@ -287,10 +287,6 @@ select:focus {
     }
 }
 
-@media screen and (max-width: 480px) {
-    .appointment-form {
-        padding: 50px 30px 70px 30px;
-    }
-}
+
 
 /*# sourceMappingURL=style.css.map */
