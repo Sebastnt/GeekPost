@@ -1,17 +1,24 @@
-### 3 July 7, 2020
+### March 19, 2023
 
-- Updated to React Router v5.2.0 with new Syntax and Hooks: No more usaged of the `component` property on the Route, new hooks useHistory and useLocation.
+#### Updated `webpack.common.js`:32-36
 
-### Oct 23, 2020
+##### Original:
 
-- Added support for async/wait using the `@babel/plugin-transform-runtime` plugin. No more regenerator/runtime issue.
-- Replaced now.json with vercel.json
+    {
+        test: /\.(png|svg|jpg|gif|jpeg|webp)$/,
+        use: {
+            loader: "file-loader",
+            options: { name: "[name].[ext]" },
+        },
+    }
 
-### December 9, 2021
+for
 
-- Support for node 16 and droppped 14.
-- Updated all libraries to the latest
-- Now the prettier us being used as a vscode plugin instead.
-- Dropped eslint (for now)
+    {
+    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    type: "asset/resource",
+    },
 
+###### Source
 
+[webpack-file-loader-does-not-load-background-image](https://stackoverflow.com/questions/68575859/webpack-file-loader-does-not-load-background-image)
