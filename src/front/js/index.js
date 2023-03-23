@@ -1,4 +1,3 @@
-//import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -6,7 +5,7 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Layout from "./layout";
+import App from "./app.js";
 
 //render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+ReactDOM.render(<App />, document.querySelector("#app"));
