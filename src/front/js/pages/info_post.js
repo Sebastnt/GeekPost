@@ -29,19 +29,26 @@ export const Info_post = () => {
               <label htmlFor="formFileSm" className="form-label labelcss">
                 Subir foto
                 <input
-                  className="form-control form-control-sm"
-                  id="image"
-                  onChange={(e) => setImage(e.target.value)}
-                //  value={image}
-                  type="file"
+                    className="form-control form-control-sm"
+                    id="image"
+                    onChange={(e) => setImage(e.target.value)}
+                    //  value={image}
+                    type="file"
                 />
               </label>
-              <button type="button" className=" ayuda btn btn-outline-secondary h-25 mt-4 ms-2 rounded-circle border border-dark-subtle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Subir la foto que quieres postear en formato .JPG" data-bs-html="true">
-              <i className="fa-solid fa-question"></i>
+              <button
+                  type="button"
+                  className=" ayuda btn btn-outline-secondary h-25 mt-4 ms-2 rounded-circle border border-dark-subtle"
+                  data-toggle="tooltip"
+                  data-placement="right"
+                  title="Subir  "
+              >
+                <i className="fa-solid fa-question"></i>
               </button>
             </div>
 
-            <input type="text"
+            <input
+              type="text"
               name="identity"
               id="identity"
               onChange={(e) => setIdentity(e.target.value)}
@@ -98,7 +105,11 @@ export const Info_post = () => {
               />
             </div>
             <div className="select-list seleccionar">
-              <label htmlFor="confirm_type" className="form-label labelcss" required>
+              <label
+                 htmlFor="confirm_type"
+                 className="form-label labelcss"
+                 required
+              >
                 Que tan formal queres que sea tu publicacion
               </label>
               <select
@@ -114,22 +125,26 @@ export const Info_post = () => {
               </select>
             </div>
 
-            <h3 className="tituloh3">ELIGE 3 COLORES QUE SE IDENTIFIQUEN CON TU MARCA:</h3>
+            <h3 className="tituloh3">
+              ELIGE 3 COLORES QUE SE IDENTIFIQUEN CON TU MARCA:
+            </h3>
             <div className="d-flex justify-content-around">
               <div className="">
                 <label htmlFor="color" className="ms-2 labelcss">
                   Color 1:{" "}
                 </label>
                 <input
-                    type="color"
-                    name="color"
-                    id="color"
-                    className="w-25 ms-4 elegir "
+                  type="color"
+                  name="color"
+                  id="color"
+                  className="w-25 ms-4 elegir "
                 />
                 <button
-                    className="ms-3 rounded-circle"
-                    onClick={(e) => setMain_color(e.target.value)}
-                    value={main_color}><i class="fa-sharp fa-solid fa-check"></i>
+                  className="ms-3 rounded-circle"
+                  onClick={(e) => setMain_color(e.target.value)}
+                  value={main_color}
+                >
+                  <i class="fa-sharp fa-solid fa-check"></i>
                 </button>
               </div>
               <div>
@@ -137,10 +152,10 @@ export const Info_post = () => {
                   Color 2:{" "}
                 </label>
                 <input
-                    type="color"
-                    name="color"
-                    id="color"
-                    className="w-25 ms-4"
+                  type="color"
+                  name="color"
+                  id="color"
+                  className="w-25 ms-4"
                 />
                 <button
                   className="ms-3 rounded-circle"
@@ -155,16 +170,15 @@ export const Info_post = () => {
                   Color 3:{" "}
                 </label>
                 <input
-                    type="color"
-                    name="color"
-                    id="color"
-                    className="w-25 ms-4"
+                  type="color"
+                  name="color"
+                  id="color"
+                  className="w-25 ms-4"
                 />
                 <button
-                  className="ms-3 rounded-circle"
-                  onClick={(e) => setAux_color(e.target.value)}
-                  value={aux_color}
-                >
+                    className="ms-3 rounded-circle"
+                    onClick={(e) => setAux_color(e.target.value)}
+                    value={aux_color}>
                   <i class="fa-sharp fa-solid fa-check"></i>
                 </button>
               </div>
