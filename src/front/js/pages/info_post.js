@@ -45,7 +45,7 @@ export const Info_post = () => {
                 
                 <label htmlFor="color">Pick a color: </label>
                 <input type="color" name="color" id="color" className="w-25 ms-4" />
-                
+                <button
                   onClick={(e) => setMain_color(e.target.value)}
                   value={main_color}>Color 1</button>
               </div>
