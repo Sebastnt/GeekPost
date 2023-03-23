@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/info_post.css";
+import "../../../front/styles/info_post.css"
 import { Link, useNavigate } from "react-router-dom";
+
 
 export const Info_post = () => {
   const { store, actions } = useContext(Context);
@@ -10,12 +11,12 @@ export const Info_post = () => {
   const [main_text, setMain_text] = useState("");
   const [secondary_text, setSecondary_text] = useState(" ");
   const [price, setPrice] = useState(" ");
-  const [contact, setContact] = useState("");
+  const [contact_details, setContact_details] = useState("");
   const [logo, setLogo] = useState("");
   const [formality, setFormality] = useState(" ");
   const [main_color, setMain_color] = useState(" ");
   const [secondary_color, setSecondary_color] = useState("");
-  const [colors, setColors] = useState("");
+  const [aux_color, setAux_color] = useState("");
   const navigate = useNavigate();
 
   return (
@@ -34,16 +35,17 @@ export const Info_post = () => {
                 className="form-control form-control-sm"
                 id="image"
                 onChange={(e) => setImage(e.target.value)}
-              //  value={image}
-                type="file"
+                value={image}
+                type="text"
                 required
               />
             </div>
             <div className="d-flex justify-content-around">
               <div className="">
+                
                 <label htmlFor="color">Pick a color: </label>
                 <input type="color" name="color" id="color" className="w-25 ms-4" />
-                <button
+                
                   onClick={(e) => setMain_color(e.target.value)}
                   value={main_color}>Color 1</button>
               </div>
@@ -59,8 +61,8 @@ export const Info_post = () => {
                 <label htmlFor="color">Pick a color: </label>
                 <input type="color" name="color" id="color" className="w-25 ms-4" />
                 <button
-                  onClick={(e) => setColors(e.target.value)}
-                  value={colors}
+                  onClick={(e) => setAux_color(e.target.value)}
+                  value={aux_color}
                 >Color 3</button>
               </div>
             </div>
@@ -104,8 +106,8 @@ export const Info_post = () => {
               type="text"
               name="contact"
               id="contact"
-              onChange={(e) => setContact(e.target.value)}
-              value={contact}
+              onChange={(e) => setContact_details(e.target.value)}
+              value={contact_details}
               placeholder="Dato de contacto (opcional)"
             />
 
@@ -116,9 +118,9 @@ export const Info_post = () => {
               <input
                 className="form-control form-control-sm"
                 id="Logo"
-                 onChange={(e) => setLogo(e.target.value)}
-              //  value={logo}
-                type="file"
+                onChange={(e) => setLogo(e.target.value)}
+                value={logo}
+                type="text"
               />
             </div>
             <div className="select-list">
@@ -129,7 +131,7 @@ export const Info_post = () => {
                 name="confirm_type"
                 onChange={(e) => setFormality(e.target.value)}
                 value={formality}
-                id="confirm_type"
+                id="formality"
               >
                 <option defaultValue="">Elegir</option>
                 <option value={formality}>Muy formal</option>

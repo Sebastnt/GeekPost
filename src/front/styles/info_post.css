@@ -158,13 +158,13 @@ h3 {
     text-align: center;
     font-size: 12px;
     line-height: 1.42857;
-    background-color: aqua;
+    background-color: blue;
 }
 
 body {
     font-size: 13px;
     line-height: 1.8;
-    color: #fff;
+    color: #b72222;
     background-image: url("/src/front/img/fondo5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
