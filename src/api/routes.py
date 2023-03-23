@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Post, Design
+from api.models import db, User, Post
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -21,7 +21,7 @@ def login():
     if user is None:
         return jsonify({"msg": "User doesn't exist"}), 404
     if email != user.email or password != user.password:
-        return jsonify({"msg": "Bad email or password"}), 401
+        return jsonify({"msg": "Incorrect email or password"}), 401
 
     access_token = create_access_token(identity=user.id)
     return jsonify(access_token=access_token)
@@ -48,8 +48,7 @@ def signup():
     new_user = User(
         email = body["email"], 
         password = body["password"],
-        name = body["name"],
-        last_name = body["last_name"])
+        first_name = body["first_name"])
 
     db.session.add(new_user)
     db.session.commit()
@@ -58,11 +57,11 @@ def signup():
     return jsonify(response_body), 200
 
 
-@api.route('/profile/<int:user_id>', methods=['DELETE'])
+@api.route('/profile', methods=['DELETE'])
 @jwt_required()
-def delete_account(user_id):
+def delete_account():
     current_user = get_jwt_identity()
-    user_query = User.query.filter(user_id==current_user).first()
+    user_query = User.query.filter_by(id=current_user).first()
 
     if user_query:
         db.session.delete(user_query)
@@ -73,18 +72,52 @@ def delete_account(user_id):
         return jsonify({"msg": "Not able to delete this account"}), 200
 
 
-@api.route('/profile/<int:user_id>', methods=['PUT'])
+@api.route('/profile', methods=['PUT'])
 @jwt_required()
-def update_account(user_id):
+def update_account():
     current_user = get_jwt_identity()
-    user_query = User.query.filter(user_id==current_user).first()
-
     body = json.loads(request.data)
-    updated_user = User(
-        email = body["email"], 
-        password = body["password"],
-        name = body["name"],
-        last_name = body["last_name"])
+    user_query = User.query.filter_by(id=current_user).first()
+
+    if user_query is None:
+        response_body = {"msg": "User doesn't exists"}
+        return jsonify(response_body), 400    
+
+    if "email" in body:
+        user_query.email =  body["email"]
+    if "password" in body:
+        user_query.password =  body["password"]
+    if "name" in body:
+        user_query.name =  body["name"]
+    if "last_name" in body:
+        user_query.last_name =  body["last_namewebsite_url"]
+    if "website_url" in body:
+        user_query.website_url =  body["website_url"]
+    if "facebook_profile" in body:
+        user_query.facebook_profile =  body["facebook_profile"]
+    if "instagram_profile" in body:
+        user_query.instagram_profile =  body["instagram_profile"]
+    if "tiktok_profile" in body:
+        user_query.instagram_profile =  body["tiktok_profile"]
+    if "business_name" in body:
+        user_query.business_name =  body["business_name"]
 
     db.session.commit()
     return jsonify({"msg": "You information has been updated"}), 200
+
+
+@api.route("/users", methods=["GET"])
+def get_users():
+    users_query = User.query.all()
+    results = list(map(lambda user: user.serialize(), users_query))
+
+    return jsonify(results), 200
+
+@api.route('/profile', methods=['GET'])
+@jwt_required()
+def get_user_details():
+    current_user = get_jwt_identity()
+    user_query = User.query.filter_by(id=current_user).first()
+    result = user_query.serialize()
+
+    return jsonify(result), 200
