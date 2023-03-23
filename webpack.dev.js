@@ -1,8 +1,14 @@
+const path = require('path');
 const webpack = require('webpack');
+<<<<<<< HEAD
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
+=======
 const path = require('path');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 // const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+>>>>>>> main
 
 const port = 3000;
 let publicUrl = `ws://localhost:${port}/ws`;
@@ -26,6 +32,9 @@ module.exports = merge(common, {
           webSocketURL: publicUrl
         },
     },
+<<<<<<< HEAD
+    plugins: []
+=======
     plugins: [
         // new FriendlyErrorsWebpackPlugin(),
         // new ErrorOverlayPlugin(),
@@ -42,4 +51,5 @@ module.exports = merge(common, {
         // }),
         new webpack.HotModuleReplacementPlugin()
     ]
+>>>>>>> main
 });

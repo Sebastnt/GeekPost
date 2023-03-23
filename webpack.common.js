@@ -1,9 +1,56 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const webpack = require("webpack");
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
+<<<<<<< HEAD
+    entry: ["./src/js/index.js"],
+    output: {
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "public"),
+        publicPath: "/",
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"],
+            },
+            {
+                test: /\.(css)$/,
+                use: [
+                    {
+                        loader: "style-loader", // creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader", // translates CSS into CommonJS
+                    },
+                ],
+            }, //css only files
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: "asset/resource",
+            }, //for images
+            {
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                use: ["file-loader"],
+            }, //for fonts
+        ],
+    },
+    resolve: {
+        extensions: ["*", ".js"],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            favicon: "./src/img/geekpost-iso.png",
+            template: "template.html",
+        }),
+        new Dotenv({ safe: true, systemvars: true }),
+    ],
+};
+=======
   entry: [
     './src/front/js/index.js'
   ],
@@ -46,3 +93,4 @@ module.exports = {
     new Dotenv({ safe: true, systemvars: true })
   ]
 };
+>>>>>>> main

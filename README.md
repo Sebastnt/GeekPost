@@ -35,7 +35,12 @@ To insert test users in the database execute the following command:
 $ flask insert-test-users 5
 ```
 
+<<<<<<< HEAD
+### Styles
+You can update the `styles/index.css` or create new `.css` files inside `styles/` and import them into your current scss or js files depending on your needs.
+=======
 And you will see the following message:
+>>>>>>> main
 
 ```
   Creating test users
@@ -58,9 +63,25 @@ To update with all yours tables you can edit the file app.py and go to the line 
 
 ## Publish your website!
 
+<<<<<<< HEAD
+1. **Vercel:** The FREE recomended hosting provider is [vercel.com](https://vercel.com/), you can deploy in 1 minutes by typing the following 2 commands:
+
+Login (you need to have an account):
+```sh
+$ npm i vercel -g && vercel login
+```
+Deploy:
+```sh
+$ vercel --prod
+```
+✎ Note: If you don't have an account just go to vercel.com, create a account and come back here.
+
+![Vercel example procedure to deploy](https://github.com/4GeeksAcademy/react-hello-webapp/blob/4b530ba091a981d3916cc6e960e370decaf2e234/docs/deploy.png?raw=true)
+=======
 This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
 
 ### Contributors
+>>>>>>> main
 
 This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/react-flask-hello/graphs/contributors).
 
