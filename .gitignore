@@ -71,7 +71,7 @@ dist/*
 !.env.example
 .now
 
-# backend stuff
+## backend stuff
 .venv
 database.database
 database.db
