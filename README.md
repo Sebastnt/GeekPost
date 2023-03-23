@@ -1,82 +1,69 @@
-# WebApp boilerplate with React JS
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
+# WebApp boilerplate with React JS and Flask API
 
-<p align="center">
-<a href="https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b"><img src="https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/img/how-to.png?raw=true" /></a>
-</p>
+Build web applications using React.js for the front end and python/flask for your backend API.
 
+- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
+- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
+- Integrated with Pipenv for package managing.
+- Fast deloyment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
+- Use of .env file.
+- SQLAlchemy integration for database abstraction.
 
-### Requirements:
-- Make sure you are using node version 10
+### Manual Installation:
 
-1. Install the packages:
+It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+
+1. Install the python packages: `$ pipenv install`
+2. Create a .env file based on the .env.example: `$ cp .env.example .env`
+3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+
+| Engine    | DATABASE_URL                                        |
+| --------- | --------------------------------------------------- |
+| SQLite    | sqlite:////test.db                                  |
+| MySQL     | mysql://username:password@localhost:port/example    |
+| Postgress | postgres://username:password@localhost:5432/example |
+
+4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
+5. Run the migrations: `$ pipenv run upgrade`
+6. Run the application: `$ pipenv run start`
+
+### Backend Populate Table Users
+
+To insert test users in the database execute the following command:
+
+```sh
+$ flask insert-test-users 5
 ```
-$ npm install
-```
-2. Create a .env file:
-```
-$ cp .env.example .env
-```
-3. Start coding! and the webpack dev server with live reload, for windows, mac, linux or Gitpod:
 
-```bash
-$ npm run start
-```
-
+<<<<<<< HEAD
 ### Styles
 You can update the `styles/index.css` or create new `.css` files inside `styles/` and import them into your current scss or js files depending on your needs.
+=======
+And you will see the following message:
+>>>>>>> main
 
-### Components
-Add more files into your `./src/js/components` or styles folder as you need them and import them into your current files as needed.
-
-**Note (New changes)**: Components have been converted into functions to support the use of hooks:
-* Instead of a class component, we're using a `const` function.
-* Class `constructor` and `state` have been replaced by `useState()` hooks.
-* `componentDidMount()` was replaced by `useEffect({}, [])` - It runs at mount thanks to the second parameter (`[]`).
-* `Actions` and `Store` still work the same way.
-
-```jsx
-// Previous "Class Oriented"
-export class Demo extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = getState('code here');
-	}
-}
-
-// New "Functional Oriented"
-export const Demo = () => (
-	const [state, setState] = getState('code here'); //using the state (if needed)
-  const { store, actions } = useContext(Context); // using the context (if needed)
-
-);
+```
+  Creating test users
+  test_user1@test.com created.
+  test_user2@test.com created.
+  test_user3@test.com created.
+  test_user4@test.com created.
+  test_user5@test.com created.
+  Users created successfully!
 ```
 
-💡Note: There is an example using the Context API inside `views/demo.js`;
+To update with all yours tables you can edit the file app.py and go to the line 80 to insert the code to populate others tables
 
-### Views (Components)
-Add more files into your `./src/js/views` and import them in `./src/js/layout.jsx`.
+### Front-End Manual Installation:
 
-### Context
-This boilerplate comes with a centralized general Context API. The file `./src/js/store/flux.js` has a base structure for the store, we encourage you to change it and adapt it to your needs.
+-   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
 
-React Context [docs](https://reactjs.org/docs/context.html)
-BreathCode Lesson [view](https://content.breatheco.de/lesson/react-hooks-explained)
-
-The `Provider` is already set. You can consume from any component using the useContext hook to get the `store` and `actions` from the Context. Check `/views/demo.js` to see a demo.
-
-```jsx
-import { Context } from "../store/appContext";
-const MyComponentSuper = () => {
-  //here you use useContext to get store and actions
-  const { store, actions } = useContext(Context);
-  return <div>{/* you can use your actions or store inside the html */}</div>
-}
-```
+1. Install the packages: `$ npm install`
+2. Start coding! start the webpack dev server `$ npm run start`
 
 ## Publish your website!
 
+<<<<<<< HEAD
 1. **Vercel:** The FREE recomended hosting provider is [vercel.com](https://vercel.com/), you can deploy in 1 minutes by typing the following 2 commands:
 
 Login (you need to have an account):
@@ -90,10 +77,12 @@ $ vercel --prod
 ✎ Note: If you don't have an account just go to vercel.com, create a account and come back here.
 
 ![Vercel example procedure to deploy](https://github.com/4GeeksAcademy/react-hello-webapp/blob/4b530ba091a981d3916cc6e960e370decaf2e234/docs/deploy.png?raw=true)
+=======
+This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
 
-2. **Github Pages:** This boilerplate is 100% compatible with the free github pages hosting.
-To publish your website you need to push your code to your github repository and run the following command after:
-```sh
-$ npm run deploy
-```
-Note: You will need to [configure github pages for the branch gh-pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages)
+### Contributors
+>>>>>>> main
+
+This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/react-flask-hello/graphs/contributors).
+
+You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
