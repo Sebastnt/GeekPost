@@ -108,9 +108,9 @@ export const Info_post = () => {
                 id="formality"
               >
                 <option selected>Elegir</option>
-                <option value={formality}>Muy formal</option>
-                <option value={formality}>Mas o menos formal</option>
-                <option value={formality}>Informal</option>
+                <option value="Muy formal">Muy formal</option>
+                <option value="Mas o menos formal">Mas o menos formal</option>
+                <option value="Informal">Informal</option>
               </select>
             </div>
 
