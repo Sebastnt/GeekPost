@@ -165,7 +165,7 @@ body {
     font-size: 13px;
     line-height: 1.8;
     color: #fff;
-    background-image: url("/src/front/img/fondo5\ .jpg");
+    background-image: url("/src/front/img/fondo5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     -moz-background-size: cover;
@@ -192,6 +192,7 @@ body {
     -webkit-border-radius: 10px;
     -o-border-radius: 10px;
     -ms-border-radius: 10px;
+
 }
 
 .appointment-form {

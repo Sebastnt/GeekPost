@@ -39,7 +39,31 @@ export const Info_post = () => {
                 required
               />
             </div>
-
+            <div className="d-flex justify-content-around">
+              <div className="">
+                <label htmlFor="color">Pick a color: </label>
+                <input type="color" name="color" id="color" className="w-25 ms-4" />
+                <button
+                  onClick={(e) => setMain_color(e.target.value)}
+                  value={main_color}>Color 1</button>
+              </div>
+              <div>
+                <label htmlFor="color">Pick a color: </label>
+                <input type="color" name="color" id="color" className="w-25 ms-4" />
+                <button
+                  onClick={(e) => setSecondary_color(e.target.value)}
+                  value={secondary_color}
+                >Color 2</button>
+              </div>
+              <div>
+                <label htmlFor="color">Pick a color: </label>
+                <input type="color" name="color" id="color" className="w-25 ms-4" />
+                <button
+                  onClick={(e) => setColors(e.target.value)}
+                  value={colors}
+                >Color 3</button>
+              </div>
+            </div>
             <input
               type="text"
               name="identity"
@@ -113,16 +137,9 @@ export const Info_post = () => {
                 <option value={formality}>Informal</option>
               </select>
             </div>
-          </div>
-          <div className="form-group-2">
+          
             <h3>Elige 3 colores que se identifican con tu marca </h3>
-
-            
-            <div className="w-100">
-              <label htmlFor="color">Pick a color: </label>
-              <input type="color" name="color" id="color" className="w-25" />
-              <button>Submit</button>
-            </div>
+           
           </div>
 
           <div className="form-submit">

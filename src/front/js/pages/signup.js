@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
 import { Link, useNavigate } from "react-router-dom";
+import foto1 from "../../../front/img/foto1.jpg"
 
 export const Signup = () => {
   const { store, actions } = useContext(Context);
@@ -24,7 +25,7 @@ export const Signup = () => {
               id="inlineFormInputGroupName" 
               onChange={(e) => setName(e.target.value)}
               value={name}
-              placeholder="  Ingrese su nombre"/>
+              placeholder="Ingrese su nombre"/>
             </div>
           </div>
           
@@ -48,7 +49,7 @@ export const Signup = () => {
                   id="inlineFormInputGroupPassword" 
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
-                  placeholder="  Ingrese un password"
+                  placeholder="Ingrese un password"
                 />
               </div>
           </div>
@@ -89,7 +90,7 @@ export const Signup = () => {
       
     </div>
     <div >
-      <img className="col-8  mt-5 me-5 w-100 rounded" src="../im/workspace/GeekPost/src/front/img/foto1.jpg" alt=""/>
+      <img className="col-8  mt-5 me-5 w-100 rounded" src= {foto1} alt=""/>
      
     </div>
 
