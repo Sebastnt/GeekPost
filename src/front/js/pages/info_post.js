@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import "../../../front/styles/info_post.css"
+import "../../../front/styles/info_post/info_post.css";
 import { Link, useNavigate } from "react-router-dom";
-
 
 export const Info_post = () => {
   const { store, actions } = useContext(Context);
@@ -20,54 +19,29 @@ export const Info_post = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="main">
-      <div className="container">
+    <div className="main todo">
+      <div className="container cont">
         <form method="POST" className="appointment-form" id="appointment-form">
-          <h2>Completar la siguiente informacion</h2>
+          <h2 className="tituloh2">Completar la siguiente informacion</h2>
 
           <div className="form-group-1">
-            <div className="form-group">
-              <label htmlFor="formFileSm" className="form-label">
+            <div className="form-group d-flex justify-content-around">
+              <label htmlFor="formFileSm" className="form-label labelcss">
                 Subir foto
+                <input
+                  className="form-control form-control-sm"
+                  id="image"
+                  onChange={(e) => setImage(e.target.value)}
+                //  value={image}
+                  type="file"
+                />
               </label>
-            
-              <input
-                className="form-control form-control-sm"
-                id="image"
-                onChange={(e) => setImage(e.target.value)}
-                value={image}
-                type="text"
-                required
-              />
+              <button type="button" className=" ayuda btn btn-outline-secondary h-25 mt-4 ms-2 rounded-circle border border-dark-subtle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Subir la foto que quieres postear en formato .JPG" data-bs-html="true">
+              <i className="fa-solid fa-question"></i>
+              </button>
             </div>
-            <div className="d-flex justify-content-around">
-              <div className="">
-                
-                <label htmlFor="color">Pick a color: </label>
-                <input type="color" name="color" id="color" className="w-25 ms-4" />
-                <button
-                  onClick={(e) => setMain_color(e.target.value)}
-                  value={main_color}>Color 1</button>
-              </div>
-              <div>
-                <label htmlFor="color">Pick a color: </label>
-                <input type="color" name="color" id="color" className="w-25 ms-4" />
-                <button
-                  onClick={(e) => setSecondary_color(e.target.value)}
-                  value={secondary_color}
-                >Color 2</button>
-              </div>
-              <div>
-                <label htmlFor="color">Pick a color: </label>
-                <input type="color" name="color" id="color" className="w-25 ms-4" />
-                <button
-                  onClick={(e) => setAux_color(e.target.value)}
-                  value={aux_color}
-                >Color 3</button>
-              </div>
-            </div>
-            <input
-              type="text"
+
+            <input type="text"
               name="identity"
               id="identity"
               onChange={(e) => setIdentity(e.target.value)}
@@ -112,7 +86,7 @@ export const Info_post = () => {
             />
 
             <div className="form-group">
-              <label htmlFor="formFileSm" className="form-label">
+              <label htmlFor="formFileSm" className="form-label labelcss">
                 Subir logo
               </label>
               <input
@@ -120,11 +94,11 @@ export const Info_post = () => {
                 id="Logo"
                 onChange={(e) => setLogo(e.target.value)}
                 value={logo}
-                type="text"
+                type="file"
               />
             </div>
-            <div className="select-list">
-              <label htmlFor="confirm_type" className="form-label" required>
+            <div className="select-list seleccionar">
+              <label htmlFor="confirm_type" className="form-label labelcss" required>
                 Que tan formal queres que sea tu publicacion
               </label>
               <select
@@ -133,19 +107,72 @@ export const Info_post = () => {
                 value={formality}
                 id="formality"
               >
-                <option defaultValue="">Elegir</option>
+                <option selected>Elegir</option>
                 <option value={formality}>Muy formal</option>
                 <option value={formality}>Mas o menos formal</option>
                 <option value={formality}>Informal</option>
               </select>
             </div>
-          
-            <h3>Elige 3 colores que se identifican con tu marca </h3>
-           
+
+            <h3 className="tituloh3">ELIGE 3 COLORES QUE SE IDENTIFIQUEN CON TU MARCA:</h3>
+            <div className="d-flex justify-content-around">
+              <div className="">
+                <label htmlFor="color" className="ms-2 labelcss">
+                  Color 1:{" "}
+                </label>
+                <input
+                    type="color"
+                    name="color"
+                    id="color"
+                    className="w-25 ms-4 elegir "
+                />
+                <button
+                    className="ms-3 rounded-circle"
+                    onClick={(e) => setMain_color(e.target.value)}
+                    value={main_color}><i class="fa-sharp fa-solid fa-check"></i>
+                </button>
+              </div>
+              <div>
+                <label htmlFor="color" className="ms-2 labelcss">
+                  Color 2:{" "}
+                </label>
+                <input
+                    type="color"
+                    name="color"
+                    id="color"
+                    className="w-25 ms-4"
+                />
+                <button
+                  className="ms-3 rounded-circle"
+                  onClick={(e) => setSecondary_color(e.target.value)}
+                  value={secondary_color}
+                >
+                  <i class="fa-sharp fa-solid fa-check"></i>
+                </button>
+              </div>
+              <div>
+                <label htmlFor="color" className="ms-2 labelcss">
+                  Color 3:{" "}
+                </label>
+                <input
+                    type="color"
+                    name="color"
+                    id="color"
+                    className="w-25 ms-4"
+                />
+                <button
+                  className="ms-3 rounded-circle"
+                  onClick={(e) => setAux_color(e.target.value)}
+                  value={aux_color}
+                >
+                  <i class="fa-sharp fa-solid fa-check"></i>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="form-submit">
-            <button>Submit</button>
+          <div className="form-submit d-flex justify-content-center mt-5 ">
+            <button className="crear">CREA TU DISEÑO</button>
           </div>
         </form>
       </div>

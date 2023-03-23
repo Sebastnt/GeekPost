@@ -51,8 +51,8 @@ export const Login = () => {
         </label>
         <label for="passwd" className="passwd ps-4 m-1">
         <input id="passwd" type="password" placeholder="Password" 
-         onChange={(e) => setPassword(e.target.value)}
-         value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
         </label>
         <button className="button" type="submit" onClick={handleSubmit} >Entrar</button>

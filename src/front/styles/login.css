@@ -20,11 +20,11 @@ body {
 }
 
 body {
-    background-attachment: fixed;
-    background-image: url(https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-attachment: fixed !important;
+    background-image: url("https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     color: #0c0d1f;
     position: relative;
 }
@@ -94,7 +94,7 @@ input:focus {
     -webkit-transform: translate3d(-50%, -50%, 0) scale(1, 1);
     transform: translate3d(-50%, -50%, 0) scale(1, 1);
     width: 90%;
-    max-width: 1000px;
+    max-width: 2000px;
 }
 
 .login-title {
