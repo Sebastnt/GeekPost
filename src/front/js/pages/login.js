@@ -28,8 +28,8 @@ export const Login = () => {
  
   
     return (
-      <div className="fondo" style={{backgroundImage: "https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg"}}>
-        <div className="container row login-box">
+      <div className="fondo" id="fondo">
+        <div className="container row login-box" style={{backgroundImage:"https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg"}}>
         <div className="  recuadro login-title">
         <h1 className="h1login">Que quieres crear hoy?</h1>
         <span className="small-text">Empecemos!</span>
@@ -42,7 +42,7 @@ export const Login = () => {
         <Link to="/signup"><a href="#" className="alink">Registrate</a></Link>
         </div>
         <form action="" method="POST">
-        <label for="login" className="login labellogin">
+        <label htmlFor="login" className="login labellogin">
         <input id="login" type="email" 
         className=" inputlogin"
         placeholder="Usuario" 
@@ -50,7 +50,7 @@ export const Login = () => {
         value={email}
         />
         </label>
-        <label for="passwd" className="passwd  labellogin">
+        <label htmlFor="passwd" className="passwd  labellogin">
         <input id="passwd" type="password" placeholder="Password" className="inputlogin"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
